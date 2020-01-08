@@ -19,7 +19,7 @@ public class SimpleServerSocket {
         System.out.println("Server is running....");
 
         try {
-            // programing loops run
+            // loop run
             while (true) {
                 System.out.println("Server is waiting client....");
                 //Listens for a connection to be made to this socket.
