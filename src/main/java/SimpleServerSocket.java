@@ -27,10 +27,11 @@ public class SimpleServerSocket {
                 socketOfServer = listener.accept();
                 System.out.println("Accept a client request >>>>>>>>>>>");
 
-                // create inputStream & outputStream from socket
+                // create inputStream from socket
                 BufferedReader is = new BufferedReader(new InputStreamReader(socketOfServer.getInputStream()));
 
-                // we create a new thread to process each connection then we can handle multiple request from clients
+                // Because we create a new thread to process each connection then
+                // we can handle multiple request from clients
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -41,7 +42,7 @@ public class SimpleServerSocket {
                                 System.out.println("request data: " + line);
                             }
                             is.close();
-                            System.out.println("Close connection");
+                            System.out.println("Close a client request >>>>>>>>>>>");
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
